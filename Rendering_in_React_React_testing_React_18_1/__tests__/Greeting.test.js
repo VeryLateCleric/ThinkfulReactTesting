@@ -8,7 +8,8 @@ import Greeting from "../src/Greeting";
 describe("Test Greeting.js", () => {
   test("renders name and greeting props correctly", () => {
     // Write your solution here.
-    expect(1 + 1).toBe(2);
+    render(<Greeting name="Jane" greeting="it's a pleasure to meet you"/>);
+    expect(screen.getByText("Hello and it's a pleasure to meet you, Jane!")).toBeInTheDocument();
     
   });
 });
