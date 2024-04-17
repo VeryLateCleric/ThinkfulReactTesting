@@ -8,11 +8,15 @@ import Greeting from "../src/Greeting";
 describe("Test App.js", () => {
   test("renders without crashing", () => {
     // Write your solution here.
-    expect(1 + 1).toBe(2);
+    render(<App />);
+    expect(screen.getByText("Hello and good morning, Avantha!")).toBeInTheDocument();
+    expect(screen.getByText("Hello and good afternoon, Samara!")).toBeInTheDocument();
+    expect(screen.getByText("Hello and good evening, Houston!")).toBeInTheDocument();
   });
 
   test("displays three greetings", () => {
     // Write your solution here.
-    expect(1 + 1).toBe(2);
+    render(<App />);
+    expect(screen.getAllByText(/^Hello and/).length).toBe(3);
   });
 });
